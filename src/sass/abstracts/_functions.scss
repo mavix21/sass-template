@@ -1,5 +1,7 @@
 @use "sass:map";
 @use "colors" as *;
+@use "typography" as *;
+@use "sizes" as *;
 
 @function clr($color, $shade) {
   @if map.has-key($colors, $color, $shade) {
@@ -7,4 +9,20 @@
   }
 
   @error '$colors does not have that color!';
+}
+
+@function fs($font-size) {
+  @if map.has-key($font-sizes, $font-size) {
+    @return map.get($font-sizes, $font-size);
+  }
+
+  @error '$font-sizes does not have that font size!';
+}
+
+@function size($size) {
+  @if map.has-key($sizes, $size) {
+    @return map.get($sizes, $size);
+  }
+
+  @error '$sizes does not have that size!';
 }
