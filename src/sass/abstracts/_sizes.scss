@@ -1,8 +1,14 @@
-$sizes: (
-  8: 0.5rem,
-  12: 0.75rem,
-  16: 1rem,
-  20: 1.25rem,
-  32: 2rem,
-  36: 2.25rem,
-);
+@use "sass:map";
+@use "sass:math";
+
+$ratio: 1.4;
+$min-size: -2;
+$max-size: 5;
+$base-size: 1rem;
+$sizes: ();
+
+@for $size from $min-size through $max-size {
+  $key: "s#{$size}";
+  $value: $base-size * math.pow($ratio, $size);
+  $sizes: map.set($sizes, $key, $value);
+}
