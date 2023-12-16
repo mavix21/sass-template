@@ -1,0 +1,12 @@
+@use "../abstracts/" as *;
+
+.card {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+
+  &__body {
+    display: flex;
+    align-items: center;
+    padding: $card-body-padding;
+  }
+}

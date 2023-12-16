@@ -2,13 +2,38 @@
 @use "sass:math";
 
 $ratio: 1.4;
-$min-size: -2;
+$min-size: -5;
 $max-size: 5;
 $base-size: 1rem;
-$sizes: ();
+$modular-scale: ();
 
 @for $size from $min-size through $max-size {
-  $key: "s#{$size}";
+  $key: "ms#{$size}";
   $value: $base-size * math.pow($ratio, $size);
-  $sizes: map.set($sizes, $key, $value);
+  $modular-scale: map.set($modular-scale, $key, $value);
+
+  :root {
+    --#{$key}: #{$value};
+  }
 }
+
+$sizes: (
+  8: 1rem,
+  12: 0.75rem,
+  16: 1rem,
+  20: 1.25rem,
+  24: 1.5rem,
+  32: 2rem,
+  36: 2.25rem,
+  48: 3rem,
+);
+
+$hero-padding: clamp(15rem, 15vh, 20rem);
+$section-padding: clamp(3rem, 10vh, 7rem);
+$card-body-padding: clamp(2rem, 3.5vw, 5rem);
+$grid-gap: 1.5rem;
+$flex-group-gap: 1rem;
+
+$container-inline-padding: 1rem;
+$container-max-width: 67rem;
+$container-max-width-wide: 78rem;

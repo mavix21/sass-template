@@ -26,3 +26,15 @@
 
   @error '$sizes does not have that size!';
 }
+
+@function modular-scale($size) {
+  @if map.has-key($modular-scale, $size) {
+    @return map.get($modular-scale, $size);
+  }
+
+  @error '$modular-scale does not have that size!';
+}
+
+@function rem($pixels, $content: 16) {
+  @return calc($pixels / $content) * 1rem;
+}

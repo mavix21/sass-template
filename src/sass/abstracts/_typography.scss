@@ -1,13 +1,22 @@
-$ff-system-ui: system-ui, sans-serif;
-$ff-sans: "Open Sans", sans-serif;
+$ff-serif: "Abril Fatface", serif;
+$ff-sans: "Lato ", sans-serif;
+
+$ff-base: $ff-sans;
+$ff-accent: $ff-serif;
+
+@function to-rem($pixels, $content: 16) {
+  @return calc($pixels / $content) * 1rem;
+}
 
 $font-sizes: (
-  900: 3.75rem,
-  800: 3rem,
-  600: 1.5rem,
-  500: 1.3125rem,
-  400: 1.125rem,
+  900: clamp(2.5rem, 0.5rem + 10vw, 5rem),
+  800: clamp(2.5rem, 0.5rem + 7vw, 3.75rem),
+  600: clamp(1.3rem, 0.5rem + 3vw, to-rem(27)),
+  500: to-rem(21),
+  400: to-rem(18),
+  300: to-rem(16),
 );
 
 $fw-400: 400;
 $fw-700: 700;
+$ff-system-ui: system-ui, sans-serif;

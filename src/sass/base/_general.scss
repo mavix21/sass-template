@@ -1,0 +1,16 @@
+@use "../abstracts/" as *;
+
+body {
+  color: clr(neutral, 400);
+  font-size: fs(300);
+  font-family: $ff-base;
+  font-weight: $fw-400;
+  line-height: $ratio;
+}
+
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
+}
