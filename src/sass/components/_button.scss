@@ -1,29 +1,52 @@
 @use "../abstracts/" as *;
 
-.button {
+.btn {
   display: inline-flex;
   cursor: pointer;
   text-decoration: none;
   line-height: 1;
-  padding: 1.125em 2em;
-  font-weight: $fw-700;
-  transition: 275ms ease;
+  padding: 0.62em 1em;
+  font-weight: $fw-600;
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition:
+    transform 120ms ease,
+    box-shadow 120ms ease,
+    background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
 
-  &[data-type="accent"] {
-    background-color: clr(primary, 400);
-    color: clr(neutral, 900);
+  &[data-type="primary"] {
+    border: var(--border-width) solid clr(neutral, 900);
+    background-color: clr(primary, 500);
+    color: clr(neutral, 100);
+    box-shadow: 0px var(--offset-y) 0px clr(neutral, 900);
+
+    &:active {
+      box-shadow: none !important;
+      transform: translateY(var(--offset-y));
+    }
+
+    &:is(:hover, :focus) {
+      background: clr(primary, 600);
+    }
   }
 
   &[data-type="outline"] {
-    --outline-size: 5px;
+    border: var(--border-width) solid clr(neutral, 900);
     background: transparent;
-    outline: var(--outline-size) solid clr(neutral, 100);
-    outline-offset: calc(var(--outline-size) * -1);
-    color: clr(neutral, 100);
+    color: clr(neutral, 900);
+    box-shadow: 0px var(--offset-y) 0px clr(neutral, 900);
+
+    &:active {
+      box-shadow: none !important;
+      transform: translateY(var(--offset-y));
+    }
+
+    &:is(:hover, :focus) {
+      background: clr(neutral, 200);
+    }
   }
 
-  &:is(:hover, :focus) {
-    background: clr(neutral, 100);
-    color: clr(neutral, 900);
+  &:focus-visible {
+    box-shadow: var(--ring-offset-shadow), var(--ring-shadow);
   }
 }
