@@ -1,0 +1,20 @@
+@use "../abstracts/" as *;
+
+:root {
+  --bg-primary: #{clr(neutral, 100)};
+  --fg-primary: #{clr(neutral, 400)};
+  --border-color: #{clr(neutral, 900)};
+
+  --radius: 0.42em;
+  --border-width: 0.2em;
+  --offset-y: 0.2em;
+
+  --ring-offset-color: var(--bg-primary);
+  --ring-offset-width: 0.25em;
+  --ring-offset-shadow: 0px 0px 0px var(--ring-offset-width)
+    var(--ring-offset-color);
+
+  --ring-color: var(--border-color);
+  --ring-shadow: 0px 0px 0px
+    calc(var(--border-width) + var(--ring-offset-width)) var(--ring-color);
+}
