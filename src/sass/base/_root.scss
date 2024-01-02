@@ -1,9 +1,42 @@
 @use "../abstracts/" as *;
+@use "sass:math";
+@use "sass:map";
 
 :root {
-  --bg-primary: #{clr(neutral, 100)};
-  --fg-primary: #{clr(neutral, 400)};
-  --border-color: #{clr(neutral, 900)};
+  // colors
+  @each $color, $shade-map in $active-theme {
+    @each $shade, $value in $shade-map {
+      --#{$color}-#{$shade}: #{$value};
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    @each $color, $shade-map in $dark {
+      @each $shade, $value in $shade-map {
+        --#{$color}-#{$shade}: #{$value};
+      }
+    }
+  }
+
+  // sizes
+  @each $size, $value in $sizes {
+    --s#{$size}: #{$value};
+  }
+
+  // font sizes
+  @each $screen-size, $sizes in $font-sizes {
+    @if $screen-size == "small" {
+      @each $size, $value in $sizes {
+        --fs-#{$size}: #{$value};
+      }
+    } @else {
+      @include mq($screen-size) {
+        @each $size, $value in $sizes {
+          --fs-#{$size}: #{$value};
+        }
+      }
+    }
+  }
 
   --radius: 0.42em;
   --border-width: 0.2em;
@@ -17,4 +50,20 @@
   --ring-color: var(--border-color);
   --ring-shadow: 0px 0px 0px
     calc(var(--border-width) + var(--ring-offset-width)) var(--ring-color);
+}
+
+body[data-theme="light"] {
+  @each $color, $shade-map in $light {
+    @each $shade, $value in $shade-map {
+      --#{$color}-#{$shade}: #{$value};
+    }
+  }
+}
+
+body[data-theme="dark"] {
+  @each $color, $shade-map in $dark {
+    @each $shade, $value in $shade-map {
+      --#{$color}-#{$shade}: #{$value};
+    }
+  }
 }
