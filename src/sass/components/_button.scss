@@ -1,13 +1,15 @@
 @use "../abstracts/" as *;
 
-.btn {
+.button {
   display: inline-flex;
   cursor: pointer;
   text-decoration: none;
   line-height: 1;
-  padding: 0.62em 1em;
-  font-weight: $fw-600;
-  border-radius: var(--radius);
+  text-transform: $button-text-transform;
+  padding: $button-padding-default;
+  font-size: $button-font-size;
+  font-weight: $button-font-weight;
+  border-radius: $button-border-radius;
   overflow: hidden;
   transition:
     transform 120ms ease,
@@ -15,34 +17,41 @@
     background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &[data-type="primary"] {
-    border: var(--border-width) solid clr(neutral, 900);
-    background-color: clr(primary, 500);
-    color: clr(neutral, 100);
-    box-shadow: 0px var(--offset-y) 0px clr(neutral, 900);
+    border: $button-border;
+    background-color: $button-primary-background;
+    color: $button-primary-color;
+    //box-shadow: 0px var(--offset-y) 0px clr(neutral, 900);
 
-    &:active {
-      box-shadow: none !important;
-      transform: translateY(var(--offset-y));
-    }
+    // &:active {
+    //   box-shadow: none !important;
+    //   transform: translateY(var(--offset-y));
+    // }
 
     &:is(:hover, :focus) {
-      background: clr(primary, 600);
+      background-color: $button-primary-background-hover;
+      color: $button-primary-color-hover;
+    }
+  }
+
+  &[data-type="accent"] {
+    border: $button-border;
+    background-color: $button-accent-background;
+    color: $button-accent-color;
+
+    &:is(:hover, :focus) {
+      background-color: $button-accent-background-hover;
+      color: $button-accent-color-hover;
     }
   }
 
   &[data-type="outline"] {
-    border: var(--border-width) solid clr(neutral, 900);
+    border: $button-border;
     background: transparent;
-    color: clr(neutral, 900);
-    box-shadow: 0px var(--offset-y) 0px clr(neutral, 900);
-
-    &:active {
-      box-shadow: none !important;
-      transform: translateY(var(--offset-y));
-    }
+    color: $button-outline-color;
 
     &:is(:hover, :focus) {
-      background: clr(neutral, 200);
+      background-color: $button-outline-background-hover;
+      color: $button-outline-color-hover;
     }
   }
 
