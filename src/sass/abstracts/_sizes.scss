@@ -7,33 +7,85 @@ $max-size: 5;
 $base-size: 1rem;
 $modular-scale: ();
 
+// modular scale
 @for $size from $min-size through $max-size {
   $key: "ms#{$size}";
   $value: $base-size * math.pow($ratio, $size);
   $modular-scale: map.set($modular-scale, $key, $value);
-
-  :root {
-    --#{$key}: #{$value};
-  }
 }
 
 $sizes: (
-  8: 1rem,
-  12: 0.75rem,
-  16: 1rem,
-  20: 1.25rem,
-  24: 1.5rem,
-  32: 2rem,
-  36: 2.25rem,
-  48: 3rem,
+  0: 0rem,
+  0\.5: 0.125rem,
+  1: 0.25rem,
+  1\.5: 0.375rem,
+  2: 0.5rem,
+  2\.5: 0.625rem,
+  3: 0.75rem,
+  3\.5: 0.875rem,
+  4: 1rem,
+  5: 1.25rem,
+  6: 1.5rem,
+  7: 1.75rem,
+  8: 2rem,
+  9: 2.25rem,
+  10: 2.5rem,
+  11: 2.75rem,
+  12: 3rem,
+  14: 3.5rem,
+  15: 3.75rem,
+  16: 4rem,
+  20: 5rem,
+  24: 6rem,
+  28: 7rem,
+  32: 8rem,
+  36: 9rem,
+  40: 10rem,
+  44: 11rem,
+  48: 12rem,
+  52: 13rem,
+  56: 14rem,
+  60: 15rem,
+  64: 16rem,
+  72: 18rem,
+  80: 20rem,
+  96: 24rem,
 );
 
-$hero-padding: clamp(15rem, 15vh, 20rem);
-$section-padding: clamp(3rem, 10vh, 7rem);
-$card-body-padding: clamp(2rem, 3.5vw, 5rem);
-$grid-gap: 1.5rem;
-$flex-group-gap: 1rem;
+$size-0: 0rem;
+$size-0_5: 0.125rem;
+$size-1: 0.25rem;
+$size-1_5: 0.375rem;
+$size-2: 0.5rem;
+$size-2_5: 0.625rem;
+$size-3: 0.75rem;
+$size-3_5: 0.875rem;
+$size-4: 1rem;
+$size-5: 1.25rem;
+$size-6: 1.5rem;
+$size-7: 1.75rem;
+$size-8: 2rem;
+$size-9: 2.25rem;
+$size-10: 2.5rem;
+$size-11: 2.75rem;
+$size-12: 3rem;
+$size-14: 3.5rem;
+$size-16: 4rem;
+$size-20: 5rem;
+$size-24: 6rem;
+$size-28: 7rem;
+$size-32: 8rem;
+$size-36: 9rem;
+$size-40: 10rem;
+$size-44: 11rem;
+$size-48: 12rem;
+$size-52: 13rem;
+$size-56: 14rem;
+$size-60: 15rem;
+$size-64: 16rem;
+$size-72: 18rem;
+$size-80: 20rem;
+$size-96: 24rem;
 
-$container-inline-padding: 1rem;
-$container-max-width: 67rem;
-$container-max-width-wide: 78rem;
+$size-fluid-1: clamp($size-2, 2vw, $size-4);
+$size-fluid-2: clamp($size-4, 4vw, $size-6);
