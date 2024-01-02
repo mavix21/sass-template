@@ -2,11 +2,17 @@
 
 .card {
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  gap: $card-flow-spacing;
+  padding: $card-body-padding;
+  background-color: $card-background-default;
+  font-family: $card-font-family;
+  color: $card-text-color-default;
+  line-height: $card-line-height;
+  border-radius: $card-border-radius;
+  box-shadow: $card-box-shadow;
+  text-align: center;
 
-  &__body {
-    display: flex;
-    align-items: center;
-    padding: $card-body-padding;
+  &__heading {
+    @include heading($card-heading-font-size, $card-heading-color-default);
   }
 }
