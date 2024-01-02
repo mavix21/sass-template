@@ -1,11 +1,25 @@
 @use "../abstracts/" as *;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  color: clr(neutral, 400);
-  font-size: fs(300);
-  font-family: $ff-base;
-  font-weight: $fw-400;
-  line-height: $ratio;
+  background-color: $body-background-color;
+  color: $body-text-color;
+  font-size: $body-font-size;
+  font-family: $body-font-family;
+  font-weight: $body-font-weight;
+  line-height: $body-line-height;
+}
+
+a {
+  color: $link-color;
+  transition: color 0.2s ease-in-out;
+
+  &:is(:hover, :focus) {
+    color: $link-color-hover;
+  }
 }
 
 img,
