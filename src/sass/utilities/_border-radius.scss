@@ -1,0 +1,9 @@
+@use "../abstracts/tokens" as *;
+
+.border-radius-sm {
+  border-radius: $border-radius-small;
+}
+
+.border-radius-md {
+  border-radius: $border-radius-medium;
+}
