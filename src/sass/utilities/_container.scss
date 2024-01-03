@@ -1,7 +1,7 @@
 @use "../abstracts/" as *;
 
 .container {
-  --padding: #{$container-min-inline-padding} * 2;
+  --padding: #{$container-gutters} * 2;
   --max-width: #{$container-max-width};
 
   width: min(100% - var(--padding), var(--max-width));
