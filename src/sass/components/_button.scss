@@ -47,11 +47,11 @@
   &[data-type="outline"] {
     border: $button-border;
     background: transparent;
-    color: $button-outline-color;
+    color: $button-accent-color;
 
     &:is(:hover, :focus) {
-      background-color: $button-outline-background-hover;
-      color: $button-outline-color-hover;
+      background-color: $button-accent-background-hover;
+      color: $button-accent-color-hover;
     }
   }
 
