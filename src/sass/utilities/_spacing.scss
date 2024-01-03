@@ -1,13 +1,36 @@
 @use "../abstracts" as *;
 
 .section {
-  padding-block: $section-padding;
+  padding-block: $section-padding-block;
 }
 
 .mx-auto {
   margin-inline: auto;
 }
 
+.sm\:mx-0 {
+  @include mq(small) {
+    margin-inline: 0;
+  }
+}
+
+.md\:mx-0 {
+  @include mq(medium) {
+    margin-inline: 0;
+  }
+}
+
+.lg\:mx-0 {
+  @include mq(large) {
+    margin-inline: 0;
+  }
+}
+
+.measure {
+  max-inline-size: 65ch;
+}
+
+// MODULAR SCALE
 @each $size-name, $size-value in $modular-scale {
   .gap {
     &-#{$size-name} {
@@ -15,67 +38,80 @@
     }
   }
 
-  .margin {
+  .m {
     &-#{$size-name} {
       margin: $size-value;
     }
 
-    &-block-start-#{$size-name} {
+    // top
+    &t-#{$size-name} {
       margin-block-start: $size-value;
     }
 
-    &-block-end-#{$size-name} {
+    // bottom
+    &b-#{$size-name} {
       margin-block-end: $size-value;
     }
 
-    &-block-#{$size-name} {
+    // top and bottom
+    &y-#{$size-name} {
       margin-block: $size-value;
     }
 
-    &-inline-start-#{$size-name} {
+    // left
+    &l-#{$size-name} {
       margin-inline-start: $size-value;
     }
 
-    &-inline-end-#{$size-name} {
+    // right
+    &r-#{$size-name} {
       margin-inline-end: $size-value;
     }
 
-    &-inline-#{$size-name} {
+    // left and right
+    &x-#{$size-name} {
       margin-inline: $size-value;
     }
   }
 
-  .padding {
+  .p {
     &-#{$size-name} {
       padding: $size-value;
     }
 
-    &-block-start-#{$size-name} {
+    // top
+    &t-#{$size-name} {
       padding-block-end: $size-value;
     }
 
-    &-block-end-#{$size-name} {
+    // bottom
+    &b-#{$size-name} {
       padding-block-end: $size-value;
     }
 
-    &-block-#{$size-name} {
+    // top and bottom
+    &y-#{$size-name} {
       padding-block: $size-value;
     }
 
-    &-inline-start-#{$size-name} {
+    // left
+    &l-#{$size-name} {
       padding-inline-start: $size-value;
     }
 
-    &-inline-end-#{$size-name} {
+    // right
+    &r-#{$size-name} {
       padding-inline-end: $size-value;
     }
 
-    &-inline-#{$size-name} {
+    // left and right
+    &x-#{$size-name} {
       padding-inline: $size-value;
     }
   }
 }
 
+// SPACING
 @each $size-name, $size-value in $sizes {
   .gap {
     &-#{$size-name} {
@@ -83,63 +119,79 @@
     }
   }
 
-  .margin {
+  .m {
     &-#{$size-name} {
       margin: $size-value;
     }
 
-    &-block-start-#{$size-name} {
+    // top
+    &t-#{$size-name} {
       margin-block-start: $size-value;
     }
 
-    &-block-end-#{$size-name} {
+    // bottom
+    &b-#{$size-name} {
       margin-block-end: $size-value;
     }
 
-    &-block-#{$size-name} {
+    // top and bottom
+    &y-#{$size-name} {
       margin-block: $size-value;
     }
 
-    &-inline-start-#{$size-name} {
+    // left
+    &l-#{$size-name} {
       margin-inline-start: $size-value;
     }
 
-    &-inline-end-#{$size-name} {
+    // right
+    &r-#{$size-name} {
       margin-inline-end: $size-value;
     }
 
-    &-inline-#{$size-name} {
+    // left and right
+    &x-#{$size-name} {
       margin-inline: $size-value;
     }
   }
 
-  .padding {
+  .p {
     &-#{$size-name} {
       padding: $size-value;
     }
 
-    &-block-start-#{$size-name} {
+    // top
+    &t-#{$size-name} {
       padding-block-end: $size-value;
     }
 
-    &-block-end-#{$size-name} {
+    // bottom
+    &b-#{$size-name} {
       padding-block-end: $size-value;
     }
 
-    &-block-#{$size-name} {
+    // top and bottom
+    &y-#{$size-name} {
       padding-block: $size-value;
     }
 
-    &-inline-start-#{$size-name} {
+    // left
+    &l-#{$size-name} {
       padding-inline-start: $size-value;
     }
 
-    &-inline-end-#{$size-name} {
+    // right
+    &r-#{$size-name} {
       padding-inline-end: $size-value;
     }
 
-    &-inline-#{$size-name} {
+    // left and right
+    &x-#{$size-name} {
       padding-inline: $size-value;
     }
+  }
+
+  .space-y-#{$size-name} > * + * {
+    margin-block-start: $size-value;
   }
 }
