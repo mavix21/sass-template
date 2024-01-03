@@ -1,0 +1,43 @@
+@use "../abstracts" as *;
+
+.theme-switcher {
+  &__label {
+    display: grid;
+    grid-template-columns: 1em auto;
+    line-height: 1;
+    font-size: $font-size-600;
+    font-weight: $font-weight-bold;
+    gap: $size-2;
+  }
+
+  &__input {
+    display: grid;
+    place-content: center;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid currentColor;
+    border-radius: 50%;
+    transform: translateY(-0.075em);
+
+    &::before {
+      content: "";
+      display: block;
+      width: 0.65em;
+      height: 0.65em;
+      border-radius: 50%;
+      transform: scale(0);
+      transition: transform 120ms ease-in-out;
+      box-shadow: inset 1em 1em currentColor;
+    }
+
+    &:checked::before {
+      transform: scale(1);
+    }
+
+    &:focus-visible {
+      outline: max(2px, 0.15em) solid currentColor;
+      outline-offset: max(2px, 0.15em);
+    }
+  }
+}
