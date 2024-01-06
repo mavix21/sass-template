@@ -1,7 +1,14 @@
 @use "../abstracts/" as *;
 
+@media (prefers-reduced-motion: no-preference) {
+  :has(:target) {
+    scroll-behavior: smooth;
+  }
+}
+
 html {
-  scroll-behavior: smooth;
+  color-scheme: dark light;
+  hanging-punctuation: first last;
 }
 
 body {
@@ -11,6 +18,7 @@ body {
   font-family: $body-font-family;
   font-weight: $body-font-weight;
   line-height: $body-line-height;
+  min-height: 100svh;
 }
 
 a {
@@ -24,7 +32,21 @@ a {
 
 img,
 picture,
-svg {
+svg,
+video {
   display: block;
   max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
 }
