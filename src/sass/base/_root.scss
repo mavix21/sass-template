@@ -20,7 +20,7 @@
 
   // sizes
   @each $size, $value in $sizes {
-    --s#{$size}: #{$value};
+    --size-#{$size}: #{$value};
   }
 
   // font sizes
