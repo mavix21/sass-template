@@ -10,13 +10,34 @@ $color-background-default: $color-primary-100;
 $color-text-interactive-default: $color-neutral-100;
 $color-text-interactive-hover: $color-accent-300;
 
-$letter-spacing-loose: 0.16em;
+$letter-spacing-tighter: -0.05em;
+$letter-spacing-tight: -0.025em;
+$letter-spacing-normal: normal;
+$letter-spacing-wide: 0.025em;
+$letter-spacing-wider: 0.05em;
+$letter-spacing-widest: 0.1em;
 
 $border-radius-small: $size-2;
 $border-radius-medium: $size-4;
+$border-radius-full: 100vmax;
 
-$box-shadow-1: 0 $size-1 $size-4 rgb(0 0 0 / 0.05);
-$box-shadow-2: 0 $size-1 $size-4 rgb(0 0 0 / 0.15);
+$box-shadow-1: 0 $size-4 $size-8 rgb(0 0 0 / 0.25);
+$box-shadow-2: 0 $size-2 $size-4 rgb(0 0 0 / 0.25);
+$box-shadow-3: 0 $size-4 $size-8 rgb(0 0 0 / 0.15);
+$box-shadow-4: 0 $size-2 $size-4 rgb(0 0 0 / 0.15);
+$box-shadow-5: $size-2 $size-4 $size-8 rgb(0 0 0 / 0.25);
+
+$linear-gradient-primary: linear-gradient(
+  to right bottom,
+  hsl($color-primary-400),
+  hsl($color-primary-700)
+);
+
+$linear-gradient-secondary: linear-gradient(
+  to right bottom,
+  hsl($color-secondary-400),
+  hsl($color-secondary-500)
+);
 
 // * logo
 $logo-fill-default: $color-primary-400;
@@ -84,11 +105,13 @@ $button-padding-default: 0.75em 2em;
 $button-border-width: 0;
 $button-border-style: solid;
 $button-border-color: $color-neutral-900;
-$button-border: $button-border-width $button-border-style $button-border-color;
+$button-border: $button-border-width $button-border-style
+  hsl($button-border-color);
 $button-border-radius: $border-radius-small;
 
 $button-box-shadow-offset-y: 0.2em;
-$button-box-shadow: 0px $button-box-shadow-offset-y 0px $button-border-color;
+$button-box-shadow: 0px $button-box-shadow-offset-y 0px
+  hsl($button-border-color);
 
 $button-accent-color: $color-neutral-100;
 $button-accent-background: $color-accent-400;
@@ -123,8 +146,8 @@ $form-input-font-family: $body-font-family;
 $form-input-font-weight: $font-weight-semi-bold;
 $form-input-font-size: $body-font-size;
 $form-input-background-color: $color-neutral-100;
-$form-input-border-default: 3px solid $color-primary-300;
-$form-input-border-focus: 3px solid $color-primary-400;
+$form-input-border-default: 3px solid hsl($color-primary-300);
+$form-input-border-focus: 3px solid hsl($color-primary-400);
 $form-input-padding: $size-3;
 $form-input-border-radius: $border-radius-small;
 

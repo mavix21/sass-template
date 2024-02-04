@@ -12,8 +12,8 @@ html {
 }
 
 body {
-  background-color: $body-background-color;
-  color: $body-text-color;
+  background-color: hsl($body-background-color);
+  color: hsl($body-text-color);
   font-size: $body-font-size;
   font-family: $body-font-family;
   font-weight: $body-font-weight;
@@ -22,11 +22,11 @@ body {
 }
 
 a {
-  color: $link-color;
+  color: hsl($link-color);
   transition: color 0.2s ease-in-out;
 
   &:is(:hover, :focus) {
-    color: $link-color-hover;
+    color: hsl($link-color-hover);
   }
 }
 
