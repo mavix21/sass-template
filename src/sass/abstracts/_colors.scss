@@ -65,17 +65,29 @@ $_clr-stone-900: 24, 9.8%, 10%; // #1C1917
 $_clr-stone-950: 20, 14.3%, 4.1%; // #0C0A09
 
 // true colors
-$_clr-orange-300: hsl(8 75% 60%);
-$_clr-orange-400: hsl(8 62% 55%);
-$_clr-orange-500: hsl(8 62% 35%);
+$_clr-orange-300: 8 75% 60%;
+$_clr-orange-400: 8 62% 55%;
+$_clr-orange-500: 8 62% 35%;
 
-$_clr-brown-100: hsl(33 24% 92%);
-$_clr-brown-200: hsl(33 24% 88%);
-$_clr-brown-300: hsl(33 23% 69%);
-$_clr-brown-400: hsl(22 31% 44%);
-$_clr-brown-700: hsl(20 23% 23%);
-$_clr-brown-800: hsl(18 23% 10%);
-$_clr-brown-900: hsl(18 23% 7%);
+$_clr-rose-50: 355.70000000000005 100% 97.3%; // #FFF1F2
+$_clr-rose-100: 355.6 100% 94.7%; // #FFE4E6
+$_clr-rose-200: 352.70000000000005 96.1% 90%; // #FECDD3
+$_clr-rose-300: 352.6 95.7% 81.8%; // #FDA4AF
+$_clr-rose-400: 351.29999999999995 94.5% 71.4%; // #FB7185
+$_clr-rose-500: 349.70000000000005 89.2% 60.2%; // #F43F5E
+$_clr-rose-600: 346.79999999999995 77.2% 49.8%; // #E11D48
+$_clr-rose-700: 345.29999999999995 82.7% 40.8%; // #BE123C
+$_clr-rose-800: 343.4 79.7% 34.7%; // #9F1239
+$_clr-rose-900: 341.5 75.5% 30.4%; // #881337
+$_clr-rose-950: 343.1 87.7% 15.9%; //#4C0519
+
+$_clr-brown-100: 33 24% 92%;
+$_clr-brown-200: 33 24% 88%;
+$_clr-brown-300: 33 23% 69%;
+$_clr-brown-400: 22 31% 44%;
+$_clr-brown-700: 20 23% 23%;
+$_clr-brown-800: 18 23% 10%;
+$_clr-brown-900: 18 23% 7%;
 
 // gray maps
 $_slate: (
@@ -134,6 +146,20 @@ $_stone: (
   "950": $_clr-stone-950,
 );
 
+$_stone-dark: (
+  "50": $_clr-stone-950,
+  "100": $_clr-stone-900,
+  "200": $_clr-stone-800,
+  "300": $_clr-stone-700,
+  "400": $_clr-stone-600,
+  "500": $_clr-stone-500,
+  "600": $_clr-stone-400,
+  "700": $_clr-stone-300,
+  "800": $_clr-stone-200,
+  "900": $_clr-stone-100,
+  "950": $_clr-stone-50,
+);
+
 $light: (
   "neutral": (
     "50": $_clr-neutral-50,
@@ -148,13 +174,35 @@ $light: (
     "900": $_clr-neutral-900,
     "950": $_clr-neutral-950,
   ),
-  "gray": $_gray,
+  "gray": $_stone,
   "accent": (
     "300": $_clr-orange-300,
     "400": $_clr-orange-400,
     "500": $_clr-orange-500,
   ),
   "primary": (
+    "50": $_clr-rose-50,
+    "100": $_clr-rose-100,
+    "200": $_clr-rose-200,
+    "300": $_clr-rose-300,
+    "400": $_clr-rose-400,
+    "500": $_clr-rose-500,
+    "600": $_clr-rose-600,
+    "700": $_clr-rose-700,
+    "800": $_clr-rose-800,
+    "900": $_clr-rose-900,
+    "950": $_clr-rose-950,
+  ),
+  "secondary": (
+    "100": $_clr-brown-100,
+    "200": $_clr-brown-200,
+    "300": $_clr-brown-300,
+    "400": $_clr-brown-400,
+    "500": $_clr-brown-400,
+    "700": $_clr-brown-700,
+    "800": $_clr-brown-800,
+  ),
+  "terciary": (
     "100": $_clr-brown-100,
     "200": $_clr-brown-200,
     "300": $_clr-brown-300,
@@ -166,21 +214,53 @@ $light: (
 
 $dark: (
   "neutral": (
-    "100": $_clr-brown-800,
-    "900": $_clr-white,
+    "50": $_clr-neutral-950,
+    "100": $_clr-neutral-900,
+    "200": $_clr-neutral-800,
+    "300": $_clr-neutral-700,
+    "400": $_clr-neutral-600,
+    "500": $_clr-neutral-500,
+    "600": $_clr-neutral-400,
+    "700": $_clr-neutral-300,
+    "800": $_clr-neutral-200,
+    "900": $_clr-neutral-100,
+    "950": $_clr-neutral-50,
   ),
+  "gray": $_stone-dark,
   "accent": (
     "300": $_clr-orange-300,
-    "400": $_clr-orange-300,
+    "400": $_clr-orange-400,
     "500": $_clr-orange-500,
   ),
   "primary": (
-    "100": $_clr-brown-900,
-    "200": $_clr-brown-800,
-    "300": $_clr-brown-400,
-    "400": $_clr-brown-300,
-    "700": $_clr-brown-200,
-    "800": $_clr-brown-100,
+    "50": $_clr-rose-950,
+    "100": $_clr-rose-900,
+    "200": $_clr-rose-800,
+    "300": $_clr-rose-700,
+    "400": $_clr-rose-600,
+    "500": $_clr-rose-500,
+    "600": $_clr-rose-400,
+    "700": $_clr-rose-300,
+    "800": $_clr-rose-200,
+    "900": $_clr-rose-100,
+    "950": $_clr-rose-50,
+  ),
+  "secondary": (
+    "100": $_clr-brown-100,
+    "200": $_clr-brown-200,
+    "300": $_clr-brown-300,
+    "400": $_clr-brown-400,
+    "500": $_clr-brown-400,
+    "700": $_clr-brown-700,
+    "800": $_clr-brown-800,
+  ),
+  "terciary": (
+    "100": $_clr-brown-100,
+    "200": $_clr-brown-200,
+    "300": $_clr-brown-300,
+    "400": $_clr-brown-400,
+    "700": $_clr-brown-700,
+    "800": $_clr-brown-800,
   ),
 );
 
@@ -217,5 +297,22 @@ $color-primary-100: var(--primary-100);
 $color-primary-200: var(--primary-200);
 $color-primary-300: var(--primary-300);
 $color-primary-400: var(--primary-400);
+$color-primary-500: var(--primary-400);
 $color-primary-700: var(--primary-700);
 $color-primary-800: var(--primary-800);
+
+$color-secondary-100: var(--secondary-100);
+$color-secondary-200: var(--secondary-200);
+$color-secondary-300: var(--secondary-300);
+$color-secondary-400: var(--secondary-400);
+$color-secondary-500: var(--secondary-400);
+$color-secondary-700: var(--secondary-700);
+$color-secondary-800: var(--secondary-800);
+
+$color-terciary-100: var(--terciary-100);
+$color-terciary-200: var(--terciary-200);
+$color-terciary-300: var(--terciary-300);
+$color-terciary-400: var(--terciary-400);
+$color-terciary-500: var(--terciary-400);
+$color-terciary-700: var(--terciary-700);
+$color-terciary-800: var(--terciary-800);

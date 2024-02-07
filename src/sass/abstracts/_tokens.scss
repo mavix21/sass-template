@@ -5,8 +5,8 @@
 $active-theme: $light;
 
 // * contextual
-$color-text-default: $color-primary-700;
-$color-background-default: $color-primary-100;
+$color-text-default: $color-neutral-900;
+$color-background-default: $color-neutral-100;
 $color-text-interactive-default: $color-neutral-100;
 $color-text-interactive-hover: $color-accent-300;
 
@@ -49,7 +49,7 @@ $logo-size-footer: $logo-size-default;
 
 // * body
 $body-font-family: $font-family-base;
-$body-font-size: $font-size-400;
+$body-font-size: $text-base;
 $body-line-height: $ratio;
 $body-font-weight: $font-weight-default;
 $body-text-color: $color-text-default;
@@ -61,7 +61,7 @@ $link-color-hover: $color-text-interactive-hover;
 $heading-font-family: $font-family-accent;
 $heading-color-default: $body-text-color;
 $heading-font-weight: $font-weight-bold;
-$heading-letter-spacing: $letter-spacing-loose;
+$heading-letter-spacing: $letter-spacing-wide;
 $heading-line-height: 1;
 $heading-text-transform: uppercase;
 
@@ -91,9 +91,9 @@ $site-header-alignment: center;
 $navigation-text-color: $site-header-text-color;
 $navigation-text-color-hover: $color-accent-300;
 $navigation-font-family: $font-family-accent;
-$navigation-font-size: $font-size-400;
+$navigation-font-size: $text-base;
 $navigation-font-weight: $font-weight-bold;
-$navigation-letter-spacing: $letter-spacing-loose;
+$navigation-letter-spacing: $letter-spacing-wide;
 $navigation-gap: $size-10;
 
 // * buttons
@@ -131,7 +131,7 @@ $card-text-color-default: $body-text-color;
 $card-font-family: $body-font-family;
 $card-line-height: 1.25;
 $card-heading-color-default: $card-text-color-default;
-$card-heading-font-size: $font-size-600;
+$card-heading-font-size: $text-2xl;
 $card-border-radius: $border-radius-medium;
 $card-box-shadow: $box-shadow-1;
 

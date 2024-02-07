@@ -1,10 +1,12 @@
+@use "sass:map";
 @use "../abstracts" as *;
 
 @each $screen-size, $size-map in $font-sizes {
   @each $size, $value in $size-map {
     @if $screen-size == small {
-      .fs-#{$size} {
-        font-size: var(--fs-#{$size});
+      .text-#{$size} {
+        font-size: var(--text-#{$size});
+        line-height: map.get($line-heights, $size);
       }
     }
   }

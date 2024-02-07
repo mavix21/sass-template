@@ -27,12 +27,12 @@
   @each $screen-size, $sizes in $font-sizes {
     @if $screen-size == "small" {
       @each $size, $value in $sizes {
-        --fs-#{$size}: #{$value};
+        --text-#{$size}: #{$value};
       }
     } @else {
       @include mq($screen-size) {
         @each $size, $value in $sizes {
-          --fs-#{$size}: #{$value};
+          --text-#{$size}: #{$value};
         }
       }
     }
